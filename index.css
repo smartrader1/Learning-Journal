@@ -1,0 +1,247 @@
+body {
+    font-family: "Source Sans 3", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 4.83vw 1fr 4.83vw;
+    grid-template-areas: 
+        ".... head ...."
+        "main main main"
+        "foot foot foot"
+    ;
+}
+
+/* Typography */
+
+header{
+    grid-area: head;
+    padding: 1em 0;
+    width: 100%;
+}
+
+
+h1{
+    font-size: .85rem;
+    margin: 0;
+}
+
+.small-txt {
+    font-size: .75rem;
+    font-weight: 300;
+    margin-top: .4em;
+}
+
+p{
+    margin: 0;
+}
+
+h2{
+    margin: .28em 0;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin: .375em 0;
+}
+.paragraph-txt {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 300;
+    max-width: 38.44em;
+}   
+
+.font-regular{
+    font-weight: 500;
+}
+
+/* Layout */
+
+header, .logo, nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 4.83vw 1fr 4.83vw;
+    grid-template-areas:
+        "hero hero hero"
+        ".... blog ...."
+        ".... jour ...."
+        ".... abut ...."
+        ".... recn ...."
+        ;
+}
+
+.logo-img{
+    width: 20px;
+    height: 20px;
+    padding-right: .2em;
+}
+
+nav {
+    gap: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero{
+    background-image: url("images/article-image-hero.png");
+    height: 293px;
+    background-size: cover;
+    grid-area: hero;
+    position: relative;
+    width: 100%;
+}
+
+.hero-inner{
+    color: whitesmoke;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 1.25em 1.57em 1.25em;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+ 
+.blog-imgs{
+    object-fit: cover;
+    height: calc(232px + 10vw);
+    width: 100%;
+}
+
+.blog{
+    padding-bottom: 2.63em;
+}
+
+.blogs{
+    padding-top: calc(.3rem + 2vw);
+    grid-area: blog;
+    width: 100%;
+}
+
+.journey{
+    grid-area: jour;
+}
+
+.journal-img{
+    width: 100%;
+    padding: 2.125em 0;
+}
+
+.journey-paragraph{
+    padding-bottom: 1em;
+    font-weight: 300;
+}
+
+.about-me-paragraph{
+    padding: 1em 0;
+    font-weight: 300;
+}
+
+.about-me{
+    grid-area: abut;
+}
+
+.face {
+    border-radius: 50%;
+    padding-top: 2em
+}
+
+.recent-posts{
+    grid-area: recn;
+}
+
+.recent{
+    display: flex;
+    justify-content: center;
+    grid-area: recent;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 105px;
+    background-color: #202020;
+    color: whitesmoke;
+    grid-area: foot;
+}
+
+
+/* media quries */
+
+
+.copywrite{
+    font-weight: 200;
+}
+
+.html{
+    grid-area: html;
+}
+
+.csss{
+    grid-area: csss;
+}
+
+.jsss{
+    grid-area: jsss;
+}
+
+.webb{
+    grid-area: webb;
+}
+
+.react{
+    grid-area: react;
+}
+
+.gitt{
+    grid-area: gitt;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: 362px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero{
+        height: 488px;
+        background-image: url(images/blog-image-hero.png)
+    }
+
+    .blogs{
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+        grid-template-areas: 
+        'html csss jsss'
+        'webb react gitt'
+        ;
+        gap: 0 2em;
+    }
+
+    .blog-imgs{
+        height: 232px;
+    }
+
+    .recent-posts{
+        display: grid;
+        grid-template: 4em 1fr / 1fr 1fr 1fr;
+        grid-template-areas:
+        "recent recent recent"
+        "html csss jsss"
+        ;
+    }
+}
+
